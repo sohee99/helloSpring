@@ -18,7 +18,7 @@ public class MemberService {
     public List<MemberDTO> getAllMembers() {
         List<Member> memberList = memberRepository.findAll();				// 멤버 목록 얻기
 
-        List<MemberDTO> resultList = memberList.stream()            // MemberDTO로 변환하여 return
+        List<MemberDTO> resultList = memberList.stream()   // MemberDTO로 변환하여 return
                 .map(member -> new MemberDTO(member.getId(), member.getName())).toList();
         return resultList;
     }
